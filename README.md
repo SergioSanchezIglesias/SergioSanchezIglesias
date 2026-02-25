@@ -61,9 +61,22 @@ Ingeniero front-end especializado en **Angular** y **TypeScript**, construyendo 
 
 ---
 
+### ⚙️ Dev Setup
+
+<p>
+  <img src="https://img.shields.io/badge/macOS-000000?style=flat-square&logo=apple&logoColor=white" alt="macOS" />
+  <img src="https://img.shields.io/badge/Neovim-57A143?style=flat-square&logo=neovim&logoColor=white" alt="Neovim" />
+  <img src="https://img.shields.io/badge/Tmux-1BB91F?style=flat-square&logo=tmux&logoColor=white" alt="Tmux" />
+  <img src="https://img.shields.io/badge/Zellij-000000?style=flat-square&logoColor=white" alt="Zellij" />
+</p>
+
+Powered by [Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.Dots) — a complete terminal-based dev environment with Neovim/LazyVim, multiplexers, and AI integration.
+
+---
+
 ### 📊 GitHub Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=SergioSanchezIglesias&show_icons=true&theme=github_dark&hide_border=true" height="165" alt="GitHub Stats" />
-  <img src="https://github-readme-streak-stats.herokuapp.com?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true" height="165" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true" height="165" alt="GitHub Streak" />
 </p>

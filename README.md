@@ -78,5 +78,5 @@ Powered by [Gentleman.Dots](https://github.com/Gentleman-Programming/Gentleman.D
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=SergioSanchezIglesias&show_icons=true&theme=github_dark&hide_border=true" height="165" alt="GitHub Stats" />
-  <img src="https://streak-stats.demolab.com?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true" height="165" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true&v=1" height="165" alt="GitHub Streak" />
 </p>

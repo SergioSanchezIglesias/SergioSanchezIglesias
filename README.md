@@ -31,10 +31,10 @@ APPROACH   Clean architecture · AI-assisted development
 
 ## GitHub Activity
 
-![SergioSanchezIglesias GitHub statistics based on public activity](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/main/profile-summary-card-output/github_dark/3-stats.svg)
-
-![SergioSanchezIglesias most committed languages based on public activity](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/main/profile-summary-card-output/github_dark/2-most-commit-language.svg)
-
-![SergioSanchezIglesias GitHub contribution streak](https://streak-stats.demolab.com/?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true)
-
-*Summary cards show public activity data and are refreshed daily by GitHub Actions. The streak card depends on an external service.*
+<p align="center">
+  <img src="https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/main/profile-summary-card-output/github_dark/3-stats.svg" alt="SergioSanchezIglesias GitHub statistics based on public activity" width="340">
+  <img src="https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/main/profile-summary-card-output/github_dark/2-most-commit-language.svg" alt="SergioSanchezIglesias most committed languages based on public activity" width="340">
+</p>
+<p align="center">
+  <img src="https://streak-stats.demolab.com/?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true" alt="SergioSanchezIglesias GitHub contribution streak">
+</p>

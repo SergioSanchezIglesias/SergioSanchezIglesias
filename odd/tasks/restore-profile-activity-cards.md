@@ -17,6 +17,7 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 ## Tasks
 - [x] T1 Correct the profile-summary-card workflow and README asset paths after the first remote run failed.
 - [x] T2 Remove the closing slogan and verify the rendered asset endpoints.
+- [x] T3 Remove the activity explanatory note and arrange the two summary cards side by side above the streak card.
 
 ## Acceptance criteria and checks
 - Both `github_dark/3-stats.svg` and `github_dark/2-most-commit-language.svg` resolve after the workflow publishes its first run.
@@ -58,5 +59,12 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - Local README inspection confirms the exact corrected URLs, unchanged external streak card, and absent closing slogan. Together with prior YAML inspection and the supplied successful remote publication/endpoint evidence, all acceptance criteria are observed; T1 and T2 are complete.
 - No workflow, generated assets, or pre-existing untracked `.gitignore` changes were made during this final correction. No commit, push, dispatch, or pull request was performed.
 
+## Compact activity layout verification
+- Replaced the summary-card Markdown images with one centered HTML paragraph containing both images at their natural 340px width; placed the existing streak image in its own centered paragraph directly below.
+- Removed the explanatory italic activity note completely.
+- Read the changed README in full: PASS — one summary-card row, one streak-card row, no explanatory note, all three image URLs and alt texts unchanged, and the heading and all other README content preserved. This is local markup inspection, not a rendered-browser or remote endpoint check.
+- TDD remains disabled. RED: not active — strict TDD was not activated. GREEN: not active — validation is reported separately.
+- Preserved existing task-document progress and the pre-existing untracked `.gitignore`. No other files were edited; no commit, push, workflow dispatch, or pull request was performed.
+
 ## Next step
-No further workflow rerun is required to verify these asset locations. README URL correction is ready for parent-controlled delivery.
+Local implementation and verification are complete; await user authorization for any delivery action.

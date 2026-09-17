@@ -19,6 +19,7 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - [x] T2 Remove the closing slogan and verify the rendered asset endpoints.
 - [x] T3 Remove the activity explanatory note and arrange the two summary cards side by side above the streak card.
 - [x] T4 Retain the least-privilege `PROFILE_STATS_TOKEN` configuration and accept partial private-activity metrics after capability investigation.
+- [x] T5 Restore the default `GITHUB_TOKEN` for public-profile metrics (local configuration complete; delivery and remote regeneration pending).
 
 ## Acceptance criteria and checks
 - Both `github_dark/3-stats.svg` and `github_dark/2-most-commit-language.svg` resolve after the workflow publishes its first run.
@@ -80,5 +81,12 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - The action source permanently restricts Total Stars to public non-fork owned repositories and Contributed to to public repositories. Those two values cannot include private repositories even with a broader token. Commit, PR, issue, and language data depend on what the token can view through GitHub's GraphQL API.
 - T4 remains open pending a user decision: retain least-privilege partial metrics, or replace the fine-grained PAT with a broader classic `repo` PAT and authorize it for each organization where policy permits.
 
+## Default token restoration verification
+- At the user's request, changed only the generation step's `env.GITHUB_TOKEN` reference from `${{ secrets.PROFILE_STATS_TOKEN }}` to `${{ secrets.GITHUB_TOKEN }}`. All other workflow settings are unchanged. This supersedes T4's retained private-token configuration.
+- Full local YAML inspection: PASS — the generation step uses the default token reference, the custom-token reference is absent, and no literal token exists. The editor reported YAML clean.
+- TDD remains disabled. RED: not active — strict TDD was not activated. GREEN: not active — validation is reported separately.
+- Preserved prior task-record changes and the pre-existing untracked `.gitignore`. No secret was accessed, printed, altered, or deleted. No commit, push, workflow dispatch, or pull request was performed.
+- T5 is complete locally only; no regenerated metrics or remote execution success is claimed.
+
 ## Next step
-No further token or workflow changes are planned. The current card retains the fine-grained token and partial metrics by explicit user decision.
+Delivery and a remote workflow run remain necessary to regenerate and verify public-profile metrics.

@@ -38,7 +38,3 @@ APPROACH   Clean architecture · AI-assisted development
 ![SergioSanchezIglesias GitHub contribution streak](https://streak-stats.demolab.com/?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true)
 
 *Summary cards show public activity data and are refreshed daily by GitHub Actions. The streak card depends on an external service.*
-
----
-
-Build with intent. Keep learning. Leave the code clearer than you found it.

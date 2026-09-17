@@ -15,13 +15,13 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - Do not commit, push, or create a pull request unless explicitly requested.
 
 ## Tasks
-- [ ] T1 Correct the profile-summary-card workflow and README asset paths after the first remote run failed.
-- [ ] T2 Remove the closing slogan and verify the rendered asset endpoints.
+- [x] T1 Correct the profile-summary-card workflow and README asset paths after the first remote run failed.
+- [x] T2 Remove the closing slogan and verify the rendered asset endpoints.
 
 ## Acceptance criteria and checks
 - Both `github_dark/3-stats.svg` and `github_dark/2-most-commit-language.svg` resolve after the workflow publishes its first run.
 - The README contains no `Build with intent. Keep learning. Leave the code clearer than you found it.` text.
-- Workflow YAML is syntactically valid by inspection; GitHub Actions execution is pending remote dispatch.
+- Workflow YAML is syntactically valid by prior inspection; remote run `35234481642` successfully published the cards.
 
 ## Delivery
 - Forecast: approximately 45 authored changed lines.
@@ -51,5 +51,12 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - Preserved the external streak card and absence of the closing slogan. Local YAML/README inspection passed; the editor reported YAML clean. These checks do not establish remote execution success.
 - T1 configuration correction is complete locally; T1 and T2 remain open pending successful remote publication and endpoint verification.
 
+## Verified remote publication and final URL correction
+- Parent-provided remote evidence supersedes the pending-run statements above: workflow run `35234481642` succeeded and generated the cards in `origin/main` commit `974924d`, under `profile-summary-card-output/github_dark/`.
+- The assumed separate `profile-summary-card-output` branch does not exist; README URLs using that branch remained HTTP 404. Updated only the two README summary-card URLs to the observed `main/profile-summary-card-output/github_dark/3-stats.svg` and `main/profile-summary-card-output/github_dark/2-most-commit-language.svg` locations.
+- Both corrected raw URLs already returned HTTP 200 in the supplied remote checks. These are previously observed results, not new HTTP checks or a new workflow run performed during this correction.
+- Local README inspection confirms the exact corrected URLs, unchanged external streak card, and absent closing slogan. Together with prior YAML inspection and the supplied successful remote publication/endpoint evidence, all acceptance criteria are observed; T1 and T2 are complete.
+- No workflow, generated assets, or pre-existing untracked `.gitignore` changes were made during this final correction. No commit, push, dispatch, or pull request was performed.
+
 ## Next step
-After the correction is delivered remotely, rerun the workflow. Confirm that both README SVG endpoints resolve before marking T1 and T2 complete. Remote rerun remains necessary; no commit, push, dispatch, or PR was performed for this correction.
+No further workflow rerun is required to verify these asset locations. README URL correction is ready for parent-controlled delivery.

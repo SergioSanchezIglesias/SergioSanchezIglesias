@@ -31,9 +31,9 @@ APPROACH   Clean architecture · AI-assisted development
 
 ## GitHub Activity
 
-![SergioSanchezIglesias GitHub statistics based on public activity](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/profile-summary-card-output/github_dark/3-stats.svg)
+![SergioSanchezIglesias GitHub statistics based on public activity](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/main/profile-summary-card-output/github_dark/3-stats.svg)
 
-![SergioSanchezIglesias most committed languages based on public activity](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/profile-summary-card-output/github_dark/2-most-commit-language.svg)
+![SergioSanchezIglesias most committed languages based on public activity](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/main/profile-summary-card-output/github_dark/2-most-commit-language.svg)
 
 ![SergioSanchezIglesias GitHub contribution streak](https://streak-stats.demolab.com/?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true)
 

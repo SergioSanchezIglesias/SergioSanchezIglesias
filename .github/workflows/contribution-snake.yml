@@ -1,4 +1,4 @@
-name: Update contribution snake
+name: Update profile summary cards
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: contribution-snake
+  group: profile-summary-cards
   cancel-in-progress: false
 
 jobs:
@@ -19,18 +19,15 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Generate contribution SVGs
-        uses: Platane/snk/svg-only@v3
-        with:
-          github_user_name: ${{ github.repository_owner }}
-          outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-      - name: Publish SVGs to the output branch
-        uses: crazy-max/ghaction-github-pages@v4
-        with:
-          target_branch: output
-          build_dir: dist
+      - name: Generate and publish profile summary cards
+        uses: vn7n24fzkq/github-profile-summary-cards@release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          USERNAME: ${{ github.repository_owner }}
+          BRANCH_NAME: output
+          AUTO_PUSH: true
+          THEME: github_dark

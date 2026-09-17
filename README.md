@@ -31,15 +31,13 @@ APPROACH   Clean architecture · AI-assisted development
 
 ## GitHub Activity
 
-![SergioSanchezIglesias GitHub statistics based on public activity](https://github-readme-stats.vercel.app/api?username=SergioSanchezIglesias&show_icons=true&theme=github_dark&hide_border=true)
+![SergioSanchezIglesias GitHub statistics based on public activity](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/output/profile-summary-card-output/github_dark/3-stats.svg)
+
+![SergioSanchezIglesias most committed languages based on public activity](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/output/profile-summary-card-output/github_dark/2-most-commit-language.svg)
 
 ![SergioSanchezIglesias GitHub contribution streak](https://streak-stats.demolab.com/?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true)
 
-### Contribution History
-
-![Animated snake tracing SergioSanchezIglesias's GitHub contribution history on a dark grid](https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/output/github-contribution-grid-snake-dark.svg)
-
-*Cards reflect public activity and depend on external services. The contribution animation refreshes daily after its workflow runs.*
+*Summary cards show public activity data and are refreshed daily by GitHub Actions. The streak card depends on an external service.*
 
 ---
 

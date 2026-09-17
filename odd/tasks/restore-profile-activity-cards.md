@@ -45,6 +45,9 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 ## Correction after remote failure
 - Added `actions/checkout@v4` before generation and replaced the env-only token with the documented `TOKEN: ${{ secrets.GITHUB_TOKEN }}` action input.
 - Set `BRANCH_NAME: "profile-summary-card-output"`, retained `AUTO_PUSH: true`, and corrected both README raw URLs to `profile-summary-card-output/github_dark/<card>.svg` (assets at the branch root).
+- Remote rerun `35234091070` completed checkout but failed the action step with unexpected input `TOKEN` and `GITHUB_TOKEN is missing`. This supersedes the earlier token-input guidance: the installed `@release` action requires `GITHUB_TOKEN` as an environment variable.
+- Removed unsupported `with.TOKEN` and restored action-step `env.GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}`. Preserved `actions/checkout@v4`, the action's `@release` reference, repository-owner username, `profile-summary-card-output` branch, and `AUTO_PUSH: true`.
+- Focused YAML inspection confirmed the unsupported token input is absent and the environment token is present; the editor reported YAML clean. Remote rerun remains required; no remote success is claimed.
 - Preserved the external streak card and absence of the closing slogan. Local YAML/README inspection passed; the editor reported YAML clean. These checks do not establish remote execution success.
 - T1 configuration correction is complete locally; T1 and T2 remain open pending successful remote publication and endpoint verification.
 

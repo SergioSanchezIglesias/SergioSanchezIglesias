@@ -7,15 +7,15 @@ Restore the two broken GitHub Activity summary cards in the profile README and r
 The README references SVG assets on the `output` branch that return `404: Not Found`; GitHub consequently displays broken images. The card-generation workflow is absent. The closing slogan is unwanted.
 
 ## Scope
-- Add a GitHub Actions workflow that regenerates and publishes profile-summary-card SVGs to `output` daily and on manual dispatch.
+- Add a GitHub Actions workflow that regenerates and publishes profile-summary-card SVGs to `profile-summary-card-output` daily and on manual dispatch.
 - Remove the unwanted closing slogan from `README.md`.
 
 ## Constraints
-- Preserve the existing dark-theme card URLs and the working external streak card.
+- Preserve the dark theme and working external streak card; correct summary-card URLs to the published branch/root layout.
 - Do not commit, push, or create a pull request unless explicitly requested.
 
 ## Tasks
-- [x] T1 Add automated profile-summary-card publishing workflow and keep README card references valid.
+- [ ] T1 Correct the profile-summary-card workflow and README asset paths after the first remote run failed.
 - [ ] T2 Remove the closing slogan and verify the rendered asset endpoints.
 
 ## Acceptance criteria and checks
@@ -33,7 +33,8 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - 2026-09-17: User selected disabled TDD; use focused YAML/README inspection and text search.
 
 - Added `.github/workflows/profile-summary-cards.yml`: daily at 06:00 UTC and manual dispatch, `contents: write`, `GITHUB_TOKEN`, explicit `output` branch, and automatic publishing through `vn7n24fzkq/github-profile-summary-cards@release`.
-- Focused inspection of the workflow YAML and README passed: triggers, publishing permissions/token, repository-owner username, and existing `profile-summary-card-output/github_dark` SVG paths are coherent. The write tool also reported YAML clean.
+- Remote workflow run `35233548227` failed during `git add ./profile-summary-card-output/` (exit 128). The action's official workflow requires an `actions/checkout` step, token input `TOKEN`, and its recommended `profile-summary-card-output` branch/path convention. Reopen T1 to correct this configuration and README paths.
+- Initial inspection (superseded by the remote failure and correction below) of the workflow YAML and README passed: triggers, publishing permissions/token, repository-owner username, and existing `profile-summary-card-output/github_dark` SVG paths are coherent. The write tool also reported YAML clean.
 - Local literal search in `README.md` for the exact closing slogan returned no matches. Removed the now-unused closing divider; preserved the two summary-card URLs and external streak card.
 - T2 is partially complete: slogan removal is verified locally; published endpoint verification remains pending a successful remote workflow run. No remote execution or endpoint success is claimed.
 - RED: not active — strict TDD was not activated. GREEN: not active — validation is reported separately.
@@ -41,5 +42,11 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - Independent local verification passed: confirmed action, triggers, permissions, token, output branch, unchanged streak URL, expected dark-card paths, absent slogan, and no unsubstantiated remote-success claim.
 - Native review assessment was unavailable because the local Gentle AI binary is missing; therefore the independent verifier was run and passed.
 
+## Correction after remote failure
+- Added `actions/checkout@v4` before generation and replaced the env-only token with the documented `TOKEN: ${{ secrets.GITHUB_TOKEN }}` action input.
+- Set `BRANCH_NAME: "profile-summary-card-output"`, retained `AUTO_PUSH: true`, and corrected both README raw URLs to `profile-summary-card-output/github_dark/<card>.svg` (assets at the branch root).
+- Preserved the external streak card and absence of the closing slogan. Local YAML/README inspection passed; the editor reported YAML clean. These checks do not establish remote execution success.
+- T1 configuration correction is complete locally; T1 and T2 remain open pending successful remote publication and endpoint verification.
+
 ## Next step
-After the workflow is delivered to the default branch with user authorization, run it remotely (manual dispatch or scheduled run). Confirm that both README SVG endpoints resolve, then mark T2 complete. Local inspection cannot prove published cards resolve.
+After the correction is delivered remotely, rerun the workflow. Confirm that both README SVG endpoints resolve before marking T1 and T2 complete. Remote rerun remains necessary; no commit, push, dispatch, or PR was performed for this correction.

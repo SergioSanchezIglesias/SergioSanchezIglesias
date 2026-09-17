@@ -18,7 +18,7 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - [x] T1 Correct the profile-summary-card workflow and README asset paths after the first remote run failed.
 - [x] T2 Remove the closing slogan and verify the rendered asset endpoints.
 - [x] T3 Remove the activity explanatory note and arrange the two summary cards side by side above the streak card.
-- [x] T4 Use the user-created `PROFILE_STATS_TOKEN` secret when generating cards so private-repository activity can be included.
+- [x] T4 Retain the least-privilege `PROFILE_STATS_TOKEN` configuration and accept partial private-activity metrics after capability investigation.
 
 ## Acceptance criteria and checks
 - Both `github_dark/3-stats.svg` and `github_dark/2-most-commit-language.svg` resolve after the workflow publishes its first run.
@@ -74,5 +74,11 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - TDD remains disabled. RED: not active — strict TDD was not activated. GREEN: not active — validation is reported separately.
 - Preserved prior task-record changes and the pre-existing untracked `.gitignore`. No secrets were modified and no workflow dispatch, commit, push, or pull request was performed.
 
+## Private activity validation
+- User selected all-repository access and reran workflow `35237116496`; the run succeeded, but the generated Stats values remained `0` stars, `27` commits, `4` PRs, `3` issues, and `4` contributed repositories. No private-activity inclusion can be confirmed.
+- Read-only investigation found 14 private repositories visible through the local GitHub account: 7 under `SergioSanchezIglesias` and 7 under other owners (`JulianRoman26`, `archyxsec`, and `msiglesias`). A fine-grained PAT has one resource owner, so it cannot grant one workflow access across all of those owners without each organization's approval/authorization.
+- The action source permanently restricts Total Stars to public non-fork owned repositories and Contributed to to public repositories. Those two values cannot include private repositories even with a broader token. Commit, PR, issue, and language data depend on what the token can view through GitHub's GraphQL API.
+- T4 remains open pending a user decision: retain least-privilege partial metrics, or replace the fine-grained PAT with a broader classic `repo` PAT and authorize it for each organization where policy permits.
+
 ## Next step
-Local token wiring is complete. A remote run remains necessary to validate private activity inclusion; workflow invocation and delivery remain pending user authorization.
+No further token or workflow changes are planned. The current card retains the fine-grained token and partial metrics by explicit user decision.

@@ -18,6 +18,7 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - [x] T1 Correct the profile-summary-card workflow and README asset paths after the first remote run failed.
 - [x] T2 Remove the closing slogan and verify the rendered asset endpoints.
 - [x] T3 Remove the activity explanatory note and arrange the two summary cards side by side above the streak card.
+- [x] T4 Use the user-created `PROFILE_STATS_TOKEN` secret when generating cards so private-repository activity can be included.
 
 ## Acceptance criteria and checks
 - Both `github_dark/3-stats.svg` and `github_dark/2-most-commit-language.svg` resolve after the workflow publishes its first run.
@@ -66,5 +67,12 @@ The README references SVG assets on the `output` branch that return `404: Not Fo
 - TDD remains disabled. RED: not active — strict TDD was not activated. GREEN: not active — validation is reported separately.
 - Preserved existing task-document progress and the pre-existing untracked `.gitignore`. No other files were edited; no commit, push, workflow dispatch, or pull request was performed.
 
+## Private activity token wiring verification
+- Changed only the generation action's `env.GITHUB_TOKEN` reference from `${{ secrets.GITHUB_TOKEN }}` to `${{ secrets.PROFILE_STATS_TOKEN }}`. Preserved checkout, action reference, username, branch, auto-push, and every other workflow setting.
+- Full local YAML inspection: PASS — the generation step references the named repository secret, with no literal secret value present. The editor reported YAML clean. The secret value was never accessed, printed, or copied.
+- The user created the secret after being advised that aggregate private-work statistics may become public. Only a remote run can validate private activity inclusion; no such validation is claimed here.
+- TDD remains disabled. RED: not active — strict TDD was not activated. GREEN: not active — validation is reported separately.
+- Preserved prior task-record changes and the pre-existing untracked `.gitignore`. No secrets were modified and no workflow dispatch, commit, push, or pull request was performed.
+
 ## Next step
-Local implementation and verification are complete; await user authorization for any delivery action.
+Local token wiring is complete. A remote run remains necessary to validate private activity inclusion; workflow invocation and delivery remain pending user authorization.

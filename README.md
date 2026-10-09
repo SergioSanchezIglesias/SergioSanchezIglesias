@@ -1,6 +1,6 @@
 # Sergio Sánchez Iglesias
 
-**Software Engineer · Front-End & AI**
+**Software Engineer · Full Stack & AI**
 
 Spain · TYPSA Digital Solutions · [LinkedIn](https://www.linkedin.com/in/sergio-s%C3%A1nchez-iglesias-801a82255/)
 

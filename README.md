@@ -36,5 +36,5 @@ APPROACH   Clean architecture · AI-assisted development
   <img src="https://raw.githubusercontent.com/SergioSanchezIglesias/SergioSanchezIglesias/main/profile-summary-card-output/github_dark/2-most-commit-language.svg" alt="SergioSanchezIglesias most committed languages based on public activity" width="340">
 </p>
 <p align="center">
-  <img src="https://streak-stats.demolab.com/?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true" alt="SergioSanchezIglesias GitHub contribution streak">
+  <img src="https://streak-stats.demolab.com/?user=SergioSanchezIglesias&theme=github-dark-blue&hide_border=true&v=2" alt="SergioSanchezIglesias GitHub contribution streak">
 </p>
